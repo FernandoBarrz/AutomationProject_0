@@ -1,7 +1,21 @@
 import os
+import json
 
 from webex_bot.commands.echo import EchoCommand
+from command import *
 from webex_bot.webex_bot import WebexBot
+
+from webexteamssdk import WebexTeamsAPI
+
+class ILSEHBot():
+    def __init__(self,token):
+        self.token = token
+        self.api = WebexTeamsAPI(token)
+    
+    def readMessage(self):
+        rooms = self.getRooms
+    
+
 
 # Create a Bot Object
 bot = WebexBot(teams_bot_token="ZGYzMDczZDctZjA1MC00MWQxLTg2Y2MtZWRiNzc3NjkwZjBkNDFmY2ZmMTEtOWYw_PE93_2dde685a-340f-4e54-9d12-ed962b306bc4",
@@ -11,6 +25,7 @@ bot = WebexBot(teams_bot_token="ZGYzMDczZDctZjA1MC00MWQxLTg2Y2MtZWRiNzc3NjkwZjBk
 
 # Add new commands for the bot to listen out for.
 bot.add_command(EchoCommand())
+bot.add_command(CSVCommand())
 
 # Call `run` for the bot to wait for incoming messages.
 bot.run()
