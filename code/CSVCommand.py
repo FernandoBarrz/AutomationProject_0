@@ -30,7 +30,7 @@ class CSVCommand(Command):
         """
 
         image = Image(url="https://media.discordapp.net/attachments/521496346839220224/1132169645055553568/RDT_20230703_2226178576265681859042128.png")
-        text1 = TextBlock("Hey there! Please upload a .csv file UwU", weight=FontWeight.BOLDER, wrap=True, size=FontSize.DEFAULT,
+        text1 = TextBlock("Hey there! Please upload a .csv file....", weight=FontWeight.BOLDER, wrap=True, size=FontSize.DEFAULT,
                           horizontalAlignment=HorizontalAlignment.CENTER, color=Colors.DARK)
         text2 = TextBlock("Please use the integrated Webex Attachment button to send me a .csv file.",
                           wrap=True, color=Colors.DARK)
@@ -57,7 +57,7 @@ class CSVCommand(Command):
         :return: a string or Response object (or a list of either). Use Response if you want to return another card.
         """
 
-        text1 = TextBlock("Echo", weight=FontWeight.BOLDER, size=FontSize.MEDIUM)
+        """ text1 = TextBlock("Echo", weight=FontWeight.BOLDER, size=FontSize.MEDIUM)
         text2 = TextBlock("Type in something here and it will be echo'd back to you. How useful is that!",
                           wrap=True, isSubtle=True)
         input_text = Text(id="message_typed", placeholder="Type something here", maxLength=30)
@@ -72,14 +72,17 @@ class CSVCommand(Command):
                   ColumnSet(columns=[input_column]),
                   ], actions=[submit])
 
-        return response_from_adaptive_card(card)
+        return response_from_adaptive_card(card) """
+
+        log.info(message)
+        return message
 
 
 class CSVCallback(Command):
 
     def __init__(self):
         super().__init__(
-            card_callback_keyword="echo_callback",
+            card_callback_keyword="csv_callback",
             delete_previous_message=True)
 
     def execute(self, message, attachment_actions, activity):

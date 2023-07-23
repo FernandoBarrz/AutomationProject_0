@@ -1,11 +1,15 @@
 import os
 import json
+import logging
 
 from webex_bot.commands.echo import EchoCommand
-from command import *
+from CSVCommand import *
 from webex_bot.webex_bot import WebexBot
 
 from webexteamssdk import WebexTeamsAPI
+
+
+log = logging.getLogger(__name__)
 
 class ILSEHBot():
     def __init__(self,token):
