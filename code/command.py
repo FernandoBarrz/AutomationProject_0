@@ -30,7 +30,7 @@ class CSVCommand(Command):
         """
 
         image = Image(url="https://media.discordapp.net/attachments/521496346839220224/1132169645055553568/RDT_20230703_2226178576265681859042128.png")
-        text1 = TextBlock("Hey there! Please upload a .csv file....", weight=FontWeight.BOLDER, wrap=True, size=FontSize.DEFAULT,
+        text1 = TextBlock("Hey there! Please upload a .csv file UwU", weight=FontWeight.BOLDER, wrap=True, size=FontSize.DEFAULT,
                           horizontalAlignment=HorizontalAlignment.CENTER, color=Colors.DARK)
         text2 = TextBlock("Please use the integrated Webex Attachment button to send me a .csv file.",
                           wrap=True, color=Colors.DARK)
