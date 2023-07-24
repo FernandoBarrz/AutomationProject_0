@@ -3,7 +3,7 @@ import json
 import logging
 
 from webex_bot.commands.echo import EchoCommand
-from commands.CSVCommand import CSVCommand
+from commands.CSVCommand import CSVHelpCommand as CSVLocal
 from webex_bot.webex_bot import WebexBot
 
 from webexteamssdk import WebexTeamsAPI, Webhook, WebhookEvent
@@ -26,7 +26,7 @@ log.warning(bot.request)
 
 # Add new commands for the bot to listen out for.
 bot.add_command(EchoCommand())
-bot.add_command(CSVCommand(request))
+bot.add_command(CSVLocal())
 
 # Call `run` for the bot to wait for incoming messages.
 bot.run()
