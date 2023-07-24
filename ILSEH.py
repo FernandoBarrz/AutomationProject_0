@@ -3,7 +3,7 @@ import json
 import logging
 
 from webex_bot.commands.echo import EchoCommand
-from commands.CSVCommand import CSVCommand
+from commands.CSVCommand import CSVHelpCommand as CSVLocal
 from webex_bot.webex_bot import WebexBot
 
 from webexteamssdk import WebexTeamsAPI, Webhook, WebhookEvent
@@ -16,7 +16,7 @@ test_token = "NTg5ZDg2YTAtMWE2Ny00OTgxLThhNTgtYjE3ZmVlODJmNGVhZWNjNDY0ZTQtNTVl_P
 api = WebexTeamsAPI(token)
 
 # Create a Bot Object
-bot = WebexBot(teams_bot_token=token,
+bot = WebexBot(teams_bot_token=test_token,
                #approved_rooms=['06586d8d-6aad-4201-9a69-0bf9eeb5766e'],
                bot_name="ILSEH",
                include_demo_commands=True)
@@ -26,7 +26,7 @@ log.warning(bot.request)
 
 # Add new commands for the bot to listen out for.
 bot.add_command(EchoCommand())
-bot.add_command(CSVCommand(request))
+bot.add_command(CSVLocal())
 
 # Call `run` for the bot to wait for incoming messages.
 bot.run()
