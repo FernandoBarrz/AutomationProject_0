@@ -3,11 +3,7 @@
 #Importing the images
 
 #Python
-FROM python:3.8-slim-buster
-#NodeJS
-FROM node:16
-#NodeJS port
-EXPOSE 8888
+FROM python:3.9.17-slim-bullseye
 
 #Sets the working directory
 WORKDIR /app
@@ -22,4 +18,4 @@ RUN pip install -r requirements.txt
 COPY . .
 
 #Run the bot using the python3 command with the filename as argument
-CMD ["python3", "code/ILSEH.py"]
+CMD ["python3", "ILSEH.py"]
