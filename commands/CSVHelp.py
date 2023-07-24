@@ -31,7 +31,7 @@ class CSVHelpCommand(Command):
         """
 
         image = Image(url="https://media.discordapp.net/attachments/521496346839220224/1132169645055553568/RDT_20230703_2226178576265681859042128.png")
-        text1 = TextBlock("Hey there! Please upload a .csv file U//w//U", weight=FontWeight.BOLDER, wrap=True, size=FontSize.DEFAULT,
+        text1 = TextBlock("Hey there! Please upload a .csv file", weight=FontWeight.BOLDER, wrap=True, size=FontSize.DEFAULT,
                           horizontalAlignment=HorizontalAlignment.CENTER, color=Colors.DARK)
         text2 = TextBlock("Please use the integrated Webex Attachment button to send me a .csv file. Don't forget to @ me if this is a shared group space ;)",
                           wrap=True, color=Colors.DARK)
@@ -58,29 +58,11 @@ class CSVHelpCommand(Command):
         :return: a string or Response object (or a list of either). Use Response if you want to return another card.
         """
 
-        """ text1 = TextBlock("Echo", weight=FontWeight.BOLDER, size=FontSize.MEDIUM)
-        text2 = TextBlock("Type in something here and it will be echo'd back to you. How useful is that!",
-                          wrap=True, isSubtle=True)
-        input_text = Text(id="message_typed", placeholder="Type something here", maxLength=30)
-        input_column = Column(items=[input_text], width=2)
-
-        submit = Submit(title="Submit",
-                        data={
-                            "callback_keyword": "echo_callback"})
-
-        card = AdaptiveCard(
-            body=[ColumnSet(columns=[Column(items=[text1, text2], width=2)]),
-                  ColumnSet(columns=[input_column]),
-                  ], actions=[submit])
-
-        return response_from_adaptive_card(card) """
-
-
 class CSVCallback(Command):
 
     def __init__(self):
         super().__init__(
-            card_callback_keyword="csv_callback",
+            card_callback_keyword="csvHelp_callback",
             delete_previous_message=True)
 
     def execute(self, message, attachment_actions, activity):

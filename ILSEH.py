@@ -3,7 +3,7 @@ import json
 import logging
 
 from webex_bot.commands.echo import EchoCommand
-from commands.CSVCommand import CSVHelpCommand as CSVLocal
+from commands.CSVHelp import CSVHelpCommand as CSVLocal
 from webex_bot.webex_bot import WebexBot
 
 from webexteamssdk import WebexTeamsAPI, Webhook, WebhookEvent
