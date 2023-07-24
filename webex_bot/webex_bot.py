@@ -253,16 +253,10 @@ class WebexBot(WebexWebsocketClient):
             self.request=request
 
             #Print the result of the CSV parsing
-            log.warning(request.text)
+            log.debug(request.text)
 
 
             command = CSVCommand(request.text)
-
-
-            log.warning("Here I am")
-            #command = CSVCommand
-
-
 
 
             # Build the reply to the user
