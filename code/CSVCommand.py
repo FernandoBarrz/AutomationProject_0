@@ -13,11 +13,13 @@ log = logging.getLogger(__name__)
 
 class CSVCommand(Command):
 
-    def __init__(self):
+    def __init__(self,request):
+        self.request = request
         super().__init__(
             command_keyword="csv",
             help_message="Reads a csv file",
             chained_commands=[CSVCallback()])
+            
 
     def pre_execute(self, message, attachment_actions, activity):
         """
@@ -74,7 +76,8 @@ class CSVCommand(Command):
 
         return response_from_adaptive_card(card) """
 
-        log.info(message)
+        log.warning(f"Received on CSV command: {self.request}")
+        log.warning(self.request.text)
         return message
 
 
