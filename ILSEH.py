@@ -1,6 +1,7 @@
 import os
 import json
 import logging
+from dotenv import load_dotenv
 
 from webex_bot.commands.echo import EchoCommand
 from commands.CSVHelp import CSVHelpCommand as CSVLocal
@@ -10,7 +11,7 @@ from webexteamssdk import WebexTeamsAPI, Webhook, WebhookEvent
 
 
 log = logging.getLogger(__name__)
-
+load_dotenv()
 
 # Create a Bot Object
 bot = WebexBot(teams_bot_token=os.getenv("WEBEX_TEAMS_ACCESS_TOKEN"),
