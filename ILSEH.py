@@ -16,7 +16,7 @@ test_token = "NTg5ZDg2YTAtMWE2Ny00OTgxLThhNTgtYjE3ZmVlODJmNGVhZWNjNDY0ZTQtNTVl_P
 api = WebexTeamsAPI(token)
 
 # Create a Bot Object
-bot = WebexBot(teams_bot_token=test_token,
+bot = WebexBot(teams_bot_token=token,
                #approved_rooms=['06586d8d-6aad-4201-9a69-0bf9eeb5766e'],
                bot_name="ILSEH",
                include_demo_commands=True)
